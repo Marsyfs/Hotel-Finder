@@ -1,3 +1,9 @@
+const toggleDark = document.getElementById('toggle');
+
+toggleDark.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
 document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -10,7 +16,7 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
         { name: 'The Savoy', location: 'London', price: 700, image: 'placeholder.jpg' },
         { name: 'Burj Al Arab', location: 'Dubai', price: 1800, image: 'placeholder.jpg' },
         { name: 'The Ritz Paris', location: 'Paris', price: 2000, image: 'placeholder.jpg' },
-        { name: 'The Hilton', location: 'Paris', price: 2000, image: 'placeholder.jpg' },
+        { name: 'The Hilton', location: 'Paris', price: 700, image: 'placeholder.jpg' },
     ];
 
     const resultsContainer = document.getElementById('results');
@@ -36,6 +42,7 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
             <p><small>Dates: ${checkin} to ${checkout}</small></p>
 
             <img src="${hotel.image}" alt="${hotel.name}" style="width:50%; height:auto; object-fit:cover;">
+            <button class="btn-primary" style"width:40%; height:20%>Book Now</button>
         `;
         resultsContainer.appendChild(hotelDiv);
     });
