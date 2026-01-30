@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 :root {
@@ -108,4 +108,21 @@ header {
     color: var(--lm-color);
     background-color: var(--lm-background);
     border: none;
+}
+
+/* CONTACT PAGE */
+
+.submit-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
 }
