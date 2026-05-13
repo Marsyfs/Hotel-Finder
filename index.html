@@ -25,10 +25,36 @@
             <div class="row mb-3">
                 <div class="col"><input type="date" id="checkin" class="form-control"></div>
                 <div class="col"><input type="date" id="checkout" class="form-control"></div>
+                <div class="col"><input type="text" id="guestInput" class="form-control" placeholder="Select guests"></div>
+                       
             </div>
-            <button id="searchBtn" class="btn btn-primary">Search Hotels</button>
+
+            <button type="submit" id="searchBtn" class="btn searchBtn">Search Hotels</button>
         </form>
         </div>
+
+        <div id="guestModal" class="modal hidden">
+            <div class="modal-content">
+              <h3>Select Guests</h3>
+
+              <div class="row container">
+                <span>Adults</span>
+                <button class="count" type="button" onclick="changeCount('adults', -1)">-</button>
+                <span id="adultsCount">1</span>
+                <button class="count"  type="button" onclick="changeCount('adults', 1)">+</button>
+              </div>
+
+              <div class="row container">
+                <span>Children</span>
+                <button class="count"  type="button" onclick="changeCount('children', -1)">-</button>
+                <span id="childrenCount">0</span>
+                <button class="count" type="button" onclick="changeCount('children', 1)">+</button>
+              </div>
+
+              <button class="done-btn" type="button" onclick="applyGuests()">Done</button>
+            </div>
+          </div>  
+
         <div id="results" class="mt-4">
         </div>
         <div class="result card-1 mb-3 p-3'"></div>

@@ -48,4 +48,34 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
     });
 });
 
+let adults = 1;
+let children = 0;
 
+const modal = document.getElementById("guestModal");
+const input = document.getElementById("guestInput");
+
+document.getElementById("guestInput").addEventListener("click", () => {
+  modal.classList.remove("hidden");
+});
+
+function changeCount(type, value) {
+  if (type === "adults") {
+    adults = Math.max(1, adults + value);
+    document.getElementById("adultsCount").textContent = adults;
+  } else {
+    children = Math.max(0, children + value);
+    document.getElementById("childrenCount").textContent = children;
+  }
+}
+
+function applyGuests() {
+  input.value = `${adults} Adults, ${children} Children`;
+  modal.classList.add("hidden");
+}
+
+// click outside modal to close
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
+});
